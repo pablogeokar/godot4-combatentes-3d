@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://crl463ggpld4o"]
+
+[ext_resource type="Script" uid="uid://cekxpvhw8jgal" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://c6pkwbwbs5sop" path="res://tile.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://f1178vmtm51p" path="res://peca.tscn" id="3_h2yge"]
+
+[sub_resource type="Environment" id="Environment_0xm2m"]
+background_mode = 1
+background_color = Color(0.43137255, 0.43137255, 0.43137255, 1)
+
+[node name="Main" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6215849, 1.4783344, 0.52971125)
+script = ExtResource("1_0xm2m")
+tile_scene = ExtResource("2_h2yge")
+peca_scene = ExtResource("3_h2yge")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.70710677, -0.61237246, 0.35355335, 0, 0.49999997, 0.86602545, -0.70710677, -0.61237246, 0.35355335, 2.8412523, 18.510332, 5.928292)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 7.483034, 15, 21.777447)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0xm2m")
